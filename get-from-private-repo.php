@@ -1,15 +1,15 @@
 <?php
+//git hub token
 
 $token =''; 
-// get file from repo
 
+
+// get file from repo
 $ch = curl_init();
-curl_setopt($ch, CURLOPT_URL, 'https://api.github.com/repos/{owner}/{repo}/contents/style.css?ref={branch}');
+curl_setopt($ch, CURLOPT_URL, 'https://api.github.com/repos/{owner}/{repo}/contents/{file}?ref={branch}');
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'GET');
 curl_setopt($ch, CURLOPT_FOLLOWLOCATION, TRUE);
-
-
 
 $headers = array();
 $headers[] = 'Accept: application/vnd.github+json';
@@ -34,8 +34,6 @@ curl_setopt($ch, CURLOPT_URL, 'https://api.github.com/repos/{owner}/{repo}/zipba
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'GET');
 curl_setopt($ch, CURLOPT_FOLLOWLOCATION, TRUE);
-
-
 
 $headers = array();
 $headers[] = 'Accept: application/vnd.github+json';
